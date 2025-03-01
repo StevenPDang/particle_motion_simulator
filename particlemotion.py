@@ -11,24 +11,23 @@ t_max = 10 #simulation time
 steps = int(t_max / dt)
 
 #input for mass and charge, and Fields
-mass = int(input('Mass of particle: '))
-charge = int(input('Charge of particle: '))
+mass = float(input('Mass of particle: '))
+charge = float(input('Charge of particle: '))
 str_in = input("Electric Field (Enter numbers seperated by spaces): ")
 str_list = str_in.split()
-EField = numpy.array(str_list, dtype=int)
+EField = numpy.array(str_list, dtype=float)
 str_in = input("Magnetic Field (Enter numbers seperated by spaces): ")
 str_list = str_in.split()
-BField = numpy.array(str_list, dtype=int)
+BField = numpy.array(str_list, dtype=float)
 
-#test input
-print(EField)
-print(BField)
 #define electric field and magnetic fields
 
 
 #initial conditons
 r = numpy.array([0.0,0.0,0.0], dtype = float)
-v = numpy.array([1.0,0.0,0.0], dtype = float) 
+str_in = input("Inital velocity. Default: 1 0 0 (Enter numbers seperated by spaces): ")
+str_list = str_in.split()
+v = numpy.array(str_list, dtype = float) 
 
 #plotting
 trajectory = []
